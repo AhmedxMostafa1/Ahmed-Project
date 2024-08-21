@@ -15,10 +15,10 @@ WORKDIR /app
 COPY . /app
 
 # Compile the Java code
-RUN javac -d out src/main/java/ServerSide/ChatServer.java src/main/java/Database/UserDatabase.java
+RUN javac -d out ChatServer.java UserDatabase.java
 
 # Expose the port that your server will run on
 EXPOSE 18866
 
 # Command to run the application
-CMD ["java", "-cp", "out", "ServerSide.ChatServer"]
+CMD ["java", "-cp", "out", "ChatServer"]
