@@ -15,7 +15,7 @@ WORKDIR /app
 COPY . /app
 
 # Compile the Java code
-RUN javac -d out src/ServerSide/ChatServer.java src/Database/UserDatabase.java
+RUN javac -d out ChatServer.java Database/UserDatabase.java
 
 # Expose the port that your server will run on
 EXPOSE 18866
