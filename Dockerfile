@@ -18,4 +18,4 @@ COPY . /app
 EXPOSE 18866
 
 # Command to run the application
-CMD ["java", "-cp", "src", "ChatServer"]
+CMD ["java", "-cp", "src", "ChatServer.java"]
