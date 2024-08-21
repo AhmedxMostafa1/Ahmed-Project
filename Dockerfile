@@ -28,4 +28,4 @@ RUN javac --module-path /opt/javafx/lib --add-modules javafx.controls,javafx.fxm
 EXPOSE 18866
 
 # Command to run the application with JavaFX modules
-CMD ["java", "--module-path", "/opt/javafx/lib", "--add-modules", "javafx.controls,javafx.fxml", "-cp", "out", "ChatServer"]
+CMD ["java", "--module-path", "/opt/javafx/lib", "--add-modules", "javafx.controls,javafx.fxml", "-cp", "out", "ChatServer.java"]
