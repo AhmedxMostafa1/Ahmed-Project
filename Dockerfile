@@ -14,8 +14,11 @@ WORKDIR /app
 # Copy the current directory contents into the container at /app
 COPY . /app
 
+# Compile the Java code
+RUN javac -d out src/ServerSide/ChatServer.java src/Database/UserDatabase.java
+
 # Expose the port that your server will run on
 EXPOSE 18866
 
 # Command to run the application
-CMD ["java", "-cp", "src", "ChatServer.java"]
+CMD ["java", "-cp", "out", "ServerSide.ChatServer"]
