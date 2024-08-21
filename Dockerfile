@@ -1,14 +1,15 @@
-# Use an official OpenJDK runtime as a parent image
-FROM openjdk:17-jdk-alpine
+# Use an official Ubuntu image with OpenJDK 17
+FROM ubuntu:22.04
 
-# Set the working directory in the container
+# Install OpenJDK and JavaFX
+RUN apt-get update && apt-get install -y \
+    openjdk-17-jdk \
+    openjfx \
+    fonts-dejavu \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set the working directory
 WORKDIR /app
-
-# Install necessary dependencies for JavaFX
-RUN apk add --no-cache \
-    fontconfig \
-    ttf-dejavu \
-    openjfx
 
 # Copy the current directory contents into the container at /app
 COPY . /app
